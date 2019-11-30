@@ -3,7 +3,7 @@
     <div class="table-container">
       <h1 class="title">Tabla de Mascotas</h1>
       <div class="table-container">
-        <table border="1" class="table is-hoverable is-fullwidth" v-if="arrayPets.length !== 0">
+        <table class="table is-hoverable is-fullwidth" v-if="arrayPets.length !== 0">
           <thead>
             <tr>
               <th>ID</th>
@@ -46,5 +46,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+.table :hover {
+  cursor: pointer;
+}
 </style>
