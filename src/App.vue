@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <div class="columns">
+      <RegisterComponent @arrayPets="pets = $event" />
+      <TableComponent :arrayPets="pets" />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RegisterComponent from "@/components/RegisterComponent";
+import TableComponent from "@/components/TableComponent";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    RegisterComponent,
+    TableComponent
+  },
+  data() {
+    return {
+      pets: []
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./scss/App.scss";
 </style>
