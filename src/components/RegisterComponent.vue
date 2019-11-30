@@ -1,7 +1,10 @@
 <template>
   <div class="column is-two-fifths">
     <h1 class="title">Registro de mascotas</h1>
-    <form @submit.prevent="register(name, size, age, weigth, selected)" id="formRegister">
+    <form
+      @submit.prevent="register(name, size, age, weigth, selected)"
+      id="formRegister"
+    >
       <div class="field">
         <label class="label">Nombre</label>
         <div class="control">
@@ -61,7 +64,9 @@
           <div class="select">
             <select v-model="selected" id="select">
               <option disabled value>Seleccione una opción</option>
-              <option v-for="(pet, id) in petsNames" :key="id">{{ pet }}</option>
+              <option v-for="(pet, id) in petsNames" :key="id">{{
+                pet
+              }}</option>
             </select>
           </div>
         </div>
@@ -71,7 +76,12 @@
           <label class="label">Perro</label>
           <div class="control">
             <div>
-              <input class="input" v-model="race" type="text" placeholder="Raza" />
+              <input
+                class="input"
+                v-model="race"
+                type="text"
+                placeholder="Raza"
+              />
               <br />
             </div>
           </div>
@@ -80,7 +90,12 @@
           <label class="label">Gato</label>
           <div class="control">
             <div>
-              <input class="input" v-model="eyesColor" type="text" placeholder="Color de ojos" />
+              <input
+                class="input"
+                v-model="eyesColor"
+                type="text"
+                placeholder="Color de ojos"
+              />
             </div>
           </div>
         </div>
@@ -88,7 +103,12 @@
           <label class="label">Loro</label>
           <div class="control">
             <div>
-              <input class="input" v-model="featherColor" type="text" placeholder="Color de plumas" />
+              <input
+                class="input"
+                v-model="featherColor"
+                type="text"
+                placeholder="Color de plumas"
+              />
             </div>
           </div>
         </div>
@@ -96,7 +116,12 @@
           <label class="label">Loro</label>
           <div class="control">
             <div>
-              <input class="input" v-model="type" type="text" placeholder="Tipo" />
+              <input
+                class="input"
+                v-model="type"
+                type="text"
+                placeholder="Tipo"
+              />
             </div>
           </div>
         </div>
@@ -167,6 +192,10 @@ export default {
       this.age = "";
       this.weigth = "";
       this.selected = "";
+      this.race = "";
+      this.eyesColor = "";
+      this.featherColor = "";
+      this.type = "";
     }
   },
   mounted() {
@@ -176,5 +205,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
